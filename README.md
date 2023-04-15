@@ -3,9 +3,29 @@ SPDX-FileCopyrightText: 2022 Sidings Media <contact@sidingsmedia.com>
 SPDX-License-Identifier: MIT
 -->
 
-# Project name
+# Static Microservice
 
-A description of what this project is and what it does
+This repo contains the resources for producing the docker image for
+static file endpoints contained withing the Sidings Media API. The
+container is based upon the nginx container with a custom config loaded.
+All static files should be placed in the /static folder, these will then
+be coppied over into the web root on container build.
+
+## Running
+
+### Docker
+
+```
+docker run --publish 3000:80 -d --name static ghcr.io/sidingsmedia/static
+```
+
+### Docker Compose
+
+A docker compose file is also provided if you would like to use it.
+
+```
+docker compose up . -d
+```
 
 ## Licence
 This repo uses the [REUSE](https://reuse.software) standard in order to

@@ -5,6 +5,6 @@ Source:
 
 # Sample paragraph, commented out:
 #
-# Files: src/*
-# Copyright: $YEAR $NAME <$CONTACT>
-# License: ...
+Files: static/*
+Copyright: 2023 Sidings Media
+License: MIT
