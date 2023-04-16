@@ -1,0 +1,22 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "Static file service for Sidings Media's API",
+  "scripts": {
+    "openapi:generate": "redocly build-docs --output=openapi.html openapi.yaml",
+    "openapi:convert": "redocly bundle -o=openapi.json openapi.yaml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SidingsMedia/static.git"
+  },
+  "author": "Sidings Media",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SidingsMedia/static/issues"
+  },
+  "homepage": "https://github.com/SidingsMedia/static#readme",
+  "dependencies": {
+    "@redocly/cli": "^1.0.0-beta.125"
+  }
+}
