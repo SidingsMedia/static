@@ -6,7 +6,7 @@ info:
   title: Sidings Media API
   description: |
       General utility APIs for all Sidings Media web based services
-  version: 0.1.3
+  version: 0.1.4
 
 
 servers:
@@ -124,6 +124,8 @@ tags:
   - name: messaging
     description: |
       Communication channels between Sidings Media and the User
+  - name: docs
+    description: API documentation endpoints
 
 
 paths:
@@ -148,5 +150,50 @@ paths:
         429:
           $ref: "#/components/responses/TooManyRequests"
 
+        5XX:
+          $ref: "#/components/responses/ServerError"
+
+  /docs:
+    get:
+      description: Interactive API documentation
+      tags:
+        - docs
+      responses:
+        200:
+          description: HTML documentation page
+          content:
+            text/html:
+              schema:
+                type: string
+        5XX:
+          $ref: "#/components/responses/ServerError"
+
+  /terms:
+    get:
+      description: API terms of use
+      tags:
+        - docs
+      responses:
+        200:
+          description: Terms
+          content:
+            text/plain:
+              schema:
+                type: string
+        5XX:
+          $ref: "#/components/responses/ServerError"
+
+  /openapi.json:
+    get:
+      description: This OpenAPI specification
+      tags:
+        - docs
+      responses:
+        200:
+          description: OpenAPI 3.0 specification
+          content:
+            application/json:
+              schema:
+                $ref: "https://spec.openapis.org/oas/3.0/schema/2021-09-28"
         5XX:
           $ref: "#/components/responses/ServerError"
