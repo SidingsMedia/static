@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Sidings Media
+# SPDX-License-Identifier: CC0-1.0
+
 [submodule "static/logo"]
 	path = static/logo
 	url = https://github.com/sidingsmedia/logo
