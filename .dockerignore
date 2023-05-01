@@ -11,4 +11,4 @@
 !package.json
 !package-lock.json
 static/logo/*
-!static/logo/rendered/
+!static/logo/rendered/*
