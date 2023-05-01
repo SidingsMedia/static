@@ -7,6 +7,10 @@ info:
   description: |
       General utility APIs for all Sidings Media web based services
   version: 0.1.4
+  x-logo:
+    url: https://cdn.sidingsmedia.com/logo/logo-white-horizontal-short.png
+    backgroundColor: #1976D2
+    alt: Sidings Media logo
 
 
 servers:
