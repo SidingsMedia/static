@@ -10,3 +10,5 @@
 !openapi.yaml
 !package.json
 !package-lock.json
+static/logo/*
+!static/logo/rendered/
