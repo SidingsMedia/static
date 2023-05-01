@@ -10,5 +10,8 @@
 !openapi.yaml
 !package.json
 !package-lock.json
-static/logo/*
-!static/logo/rendered/*
+
+# It is a git submodule so we only want the logos
+static/logo/*.svg
+static/logo/*.md
+static/logo/DCO_V1.1*
