@@ -6,7 +6,7 @@ info:
   title: Sidings Media API
   description: |
       General utility APIs for all Sidings Media web based services
-  version: 0.1.4
+  version: 0.2.0
   x-logo:
     url: https://cdn.sidingsmedia.com/logo/logo-white-horizontal-short.svg
     backgroundColor: "#1976D2"
@@ -46,6 +46,16 @@ components:
         - email
         - subject
         - message
+    
+    View:
+      type: object
+      properties:
+        page:
+          type: string
+          description: Full URI of page
+          format: uri
+      required:
+        - "page"
 
     GeneralError:
       type: object
@@ -96,6 +106,16 @@ components:
                 condition: email
               - field: name
                 condition: required
+
+    UnrecognizedPage:
+      description: The page provided is not recognized
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/GeneralError"
+          example:
+            code: 403
+            message: Unrecognized domain for page
 
     TooManyRequests:
       description: The rate limit has been exceeded
@@ -171,6 +191,21 @@ paths:
                 type: string
         5XX:
           $ref: "#/components/responses/ServerError"
+
+  /stats/views:
+    post:
+      description: Log a view for a given page
+      tags:
+        - stats
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/View"
+      responses:
+        201:
+          description: Created
 
   /terms:
     get:
